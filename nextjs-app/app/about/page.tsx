@@ -47,7 +47,7 @@ export default function About() {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <p className={styles.description}>About</p>
+        <p className={styles.title}>About</p>
         <div className={styles.socialLinks}>
           {socialLinks.map((link) => (
             <Link 

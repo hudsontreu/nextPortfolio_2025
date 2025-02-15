@@ -65,6 +65,7 @@
   text-decoration: none;
   transition: color 0.3s ease;
   font-weight: 600;
+  font-size: var(--font-size-base);
 }
 
 .navLink::before {

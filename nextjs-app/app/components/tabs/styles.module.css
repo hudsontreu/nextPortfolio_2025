@@ -57,7 +57,7 @@
   display: block;
   z-index: 1;
   color: var(--foreground);
-  font-size: 0.9rem;
+  font-size: var(--font-size-sm);
   font-weight: 700;
 }
 

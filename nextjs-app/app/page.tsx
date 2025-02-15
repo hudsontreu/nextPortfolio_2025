@@ -18,13 +18,13 @@ export default function Home() {
           <span className={styles.design}>Design</span>
           <span className={styles.technologist}>Technologist</span>
         </h1>
-        <div className={styles.description_block}>
+        {/* <div className={styles.description_block}>
           <p className={styles.description}>
             Exploring the potential of generative AI to transform.<br />
             Experimenting with innovative interaction paradigms in software design.<br />
             Experimenting with innovative interaction paradigms in software design.
           </p>
-        </div>
+        </div> */}
       </div>
       <div className={styles.heroContainer}>
         <HeroArt3 />
