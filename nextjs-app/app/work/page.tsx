@@ -38,6 +38,7 @@ export default function WorkPage() {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
+        <p className={styles.title}>Work</p>
         <p className={styles.description}>
         My work falls into multiple categories, including UX design, experience design, audiovisual experiments,
         audiovisual installations, and interactive technology. While these can be very different mediums,

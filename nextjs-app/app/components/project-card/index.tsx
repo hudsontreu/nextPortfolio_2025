@@ -12,6 +12,7 @@ export function ProjectCard({ work }: ProjectCardProps) {
   const imageUrl = work.headerImage ? urlForImage(work.headerImage).url() : '';
   const videoUrl = work.headerVideo?.url || '';
   const tags = Array.isArray(work.tags) ? work.tags : [work.tags];
+  const categoryDisplay = work._type === 'experiments' ? 'Web Experiments' : (work.category || 'Other');
   
   return (
     <Link href={`/work/${work.slug}`} className={styles.container}>
@@ -24,7 +25,10 @@ export function ProjectCard({ work }: ProjectCardProps) {
       
       <div className={styles.content}>
         <div className={styles.topSection}>
-          <span className={styles.date}>{work.date}</span>
+          <div className={styles.metadata}>
+            <span className={styles.date}>{work.date}</span>
+            <span className={styles.category}>{categoryDisplay}</span>
+          </div>
           <h2 className={styles.title}>{work.title}</h2>
         </div>
         <div className={styles.bottomSection}>

@@ -135,11 +135,12 @@
 }
 
 .categoryTitle {
-  font-family: var(--font-mono);
-  color: var(--muted-foreground);
+  font-family: var(--font-inter);
+  /* color: var(--muted-foreground); */
+  color: var(--secondary);
   font-weight: 600;
   margin-bottom: 0.5rem;
-  font-size: 0.875rem;
+  font-size: var(--font-size-sm);
 }
 
 .workList {
@@ -159,7 +160,7 @@
   font-family: var(--font-mono);
   color: var(--foreground);
   text-decoration: none;
-  font-size: 0.825rem;
+  font-size: var(--font-size-xs);
   transition: color 0.2s ease;
   position: relative;
   display: inline-block;

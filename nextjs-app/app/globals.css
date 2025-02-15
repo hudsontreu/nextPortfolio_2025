@@ -24,6 +24,14 @@
   --font-sans: var(--font-inter);
   --font-mono: var(--font-roboto-mono);
 
+  /* Font sizes */
+  --font-size-xxs: 0.75rem;
+  --font-size-xs: 0.875rem;
+  --font-size-sm: 1rem;
+  --font-size-base: 1.125rem;
+  --font-size-md: 1.25rem;
+  --font-size-lg: 1.5rem;
+
   /* Layout */
   --sidebar-width: 260px;
   --page-padding: 2rem;
