@@ -3,6 +3,7 @@ import Link from 'next/link';
 import styles from './styles.module.css';
 import { urlForImage } from '../../../sanity/lib/client';
 import { Work } from '../../lib/types';
+import { REVERSE_CATEGORY_MAP } from '../../lib/categories';
 
 interface ProjectCardProps {
   work: Work;
@@ -12,7 +13,9 @@ export function ProjectCard({ work }: ProjectCardProps) {
   const imageUrl = work.headerImage ? urlForImage(work.headerImage).url() : '';
   const videoUrl = work.headerVideo?.url || '';
   const tags = Array.isArray(work.tags) ? work.tags : [work.tags];
-  const categoryDisplay = work._type === 'experiments' ? 'Web Experiments' : (work.category || 'Other');
+  const categoryDisplay = work._type === 'experiments' 
+    ? 'Web Experiments' 
+    : (REVERSE_CATEGORY_MAP[work.category || 'other'] || 'Other');
   
   return (
     <Link href={`/work/${work.slug}`} className={styles.container}>
@@ -32,9 +35,9 @@ export function ProjectCard({ work }: ProjectCardProps) {
           <h2 className={styles.title}>{work.title}</h2>
         </div>
         <div className={styles.bottomSection}>
-          <div className={styles.scope}>
+          {/* <div className={styles.scope}>
             {tags.join(' / ')}
-          </div>
+          </div> */}
           <div className={styles.imageWrapper}>
             {work.thumbnailType === 'image' && work.headerImage ? (
               <Image

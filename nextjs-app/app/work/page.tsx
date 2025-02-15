@@ -40,8 +40,7 @@ export default function WorkPage() {
       <div className={styles.header}>
         <p className={styles.title}>Work</p>
         <p className={styles.description}>
-        My work spans experience design, interface design, UI engineering, and interactive digital arts. While these are unique fields, they each share elements of design thinking, systems thinking, and engineering in different ways. I am to use artistic exploration as a means of questioning innovative interaction paradigms in software design, and design as a ____(parag mital)____. Here, you'll find everything from UI designs to interactive installations and real-time web experiments, sortable by tags. I hope you find them interesting!
-        </p>
+        Here, you'll find everything from UI designs to interactive installations and real-time web experiments, sortable by tags. I hope you find them interesting!        </p>
       </div>
       <div className={styles.content}>
         <Tabs 

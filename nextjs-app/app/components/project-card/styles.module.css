@@ -120,7 +120,7 @@
 .topSection {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1.25rem;
 }
 
 .metadata {
@@ -163,15 +163,15 @@
 
 .date, .category {
   font-family: var(--font-mono);
-  font-size: 0.875rem;
+  font-size: var(--font-size-xs);
   opacity: 0.8;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   letter-spacing: 0.05em;
 }
 
 .title {
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: var(--font-size-md);
+  font-weight: 600;
   line-height: 1.2;
   margin: 0;
   color: var(--foreground);

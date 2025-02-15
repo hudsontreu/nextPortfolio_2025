@@ -19,34 +19,7 @@ type WorksByCategory = {
   [key: string]: Work[];
 };
 
-const CATEGORIES = [
-  'Software Tools',
-  'Installations',
-  'Web Experiments',
-  'Time-Based Media',
-  'SageNet',
-  'Other'
-];
-
-// Map display names to Sanity values
-const CATEGORY_MAP: { [key: string]: string } = {
-  'Software Tools': 'softwareTools',
-  'Installations': 'installations',
-  'Web Experiments': 'webExperiments',
-  'Time-Based Media': 'timeBasedMedia',
-  'SageNet': 'sageNet',
-  'Other': 'other'
-};
-
-// Map Sanity values to display names
-const REVERSE_CATEGORY_MAP: { [key: string]: string } = {
-  softwareTools: 'Software Tools',
-  installations: 'Installations',
-  webExperiments: 'Web Experiments',
-  timeBasedMedia: 'Time-Based Media',
-  sageNet: 'SageNet',
-  other: 'Other'
-};
+import { CATEGORIES, CATEGORY_MAP, REVERSE_CATEGORY_MAP } from '../../lib/categories';
 
 export function WorkContent() {
   const [worksByCategory, setWorksByCategory] = useState<WorksByCategory>({});
