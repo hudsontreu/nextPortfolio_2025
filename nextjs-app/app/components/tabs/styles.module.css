@@ -8,12 +8,12 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start; /* Changed from flex-start to space-between */
+  justify-content: flex-start;
   position: relative;
   overflow: auto;
   max-width: 100%;
   width: 100%;
-  gap: 1rem; /* Increased from 0.5rem */
+  gap: 1rem;
 }
 
 @media (min-width: 640px) {
@@ -25,13 +25,13 @@
 .tab {
   position: relative;
   padding: 0.6rem 1.25rem;
-  border-radius: 0;
+  border-radius: 2px;
   cursor: pointer;
   border: none;
   background: none;
-  transition: opacity 0.2s ease;
+  transition: all 0.3s ease;
   font-weight: 500;
-  min-width: 120px; /* Added min-width instead of flex */
+  min-width: 120px;
   text-align: center;
 }
 
@@ -39,18 +39,24 @@
   opacity: 0.8;
 }
 
-.activeTab {
+.tab .activeTab {
   position: absolute;
   inset: 0;
   background-color: var(--muted);
   border-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tab.active .activeTab {
+  opacity: 1;
 }
 
 .tabTitle {
   position: relative;
   display: block;
-  color: var(--foreground);
   z-index: 1;
+  color: var(--foreground);
   font-size: 0.9rem;
   font-weight: 700;
 }

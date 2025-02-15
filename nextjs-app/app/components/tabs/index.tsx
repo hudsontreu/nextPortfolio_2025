@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import styles from './styles.module.css';
 
 type Tab = {
@@ -29,19 +28,9 @@ export function Tabs({ tabs, className = '', onTabChange }: TabsProps) {
         <button
           key={tab.value}
           onClick={() => handleTabClick(tab)}
-          className={styles.tab}
+          className={`${styles.tab} ${activeTab.value === tab.value ? styles.active : ''}`}
         >
-          {activeTab.value === tab.value && (
-            <motion.div
-              layoutId="activeTab"
-              className={styles.activeTab}
-              transition={{ 
-                type: "spring", 
-                bounce: 0.3, 
-                duration: 0.6 
-              }}
-            />
-          )}
+          <div className={styles.activeTab} />
           <span className={styles.tabTitle}>
             {tab.title}
           </span>

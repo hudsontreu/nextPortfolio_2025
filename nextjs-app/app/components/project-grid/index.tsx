@@ -8,7 +8,7 @@ import { LIST_QUERIES } from '../../lib/queries';
 import { Work } from '../../lib/types';
 
 interface ProjectGridProps {
-  filter: 'all' | 'project' | 'experiment';
+  filter: string;
 }
 
 export function ProjectGrid({ filter }: ProjectGridProps) {
@@ -21,17 +21,24 @@ export function ProjectGrid({ filter }: ProjectGridProps) {
       setLoading(true);
       setError(null);
       try {
-        let query;
-        switch (filter) {
-          case 'project':
-            query = LIST_QUERIES.PROJECTS;
-            break;
-          case 'experiment':
-            query = LIST_QUERIES.EXPERIMENTS;
-            break;
-          default:
-            query = LIST_QUERIES.ALL;
-        }
+        const query = filter === 'all' 
+          ? LIST_QUERIES.ALL
+          : `*[_type == "projects" && category == "${filter}"] | order(date desc) {
+              _id,
+              _type,
+              title,
+              "slug": slug.current,
+              date,
+              headerImage,
+              "headerVideo": headerVideo.asset->{
+                _ref,
+                url
+              },
+              thumbnailType,
+              tags,
+              details,
+              category
+            }`
         const data = await client.fetch(query);
         console.log(`Fetched ${filter} data:`, data);
         setWorks(data);

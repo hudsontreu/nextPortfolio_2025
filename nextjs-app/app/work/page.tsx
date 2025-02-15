@@ -6,7 +6,7 @@ import styles from "./page.module.css";
 import { useState } from "react";
 
 export default function WorkPage() {
-  const [activeFilter, setActiveFilter] = useState<"all" | "project" | "experiment">("all");
+  const [activeFilter, setActiveFilter] = useState<string>("all");
 
   const tabs = [
     {
@@ -14,12 +14,24 @@ export default function WorkPage() {
       value: "all",
     },
     {
-      title: "Projects",
-      value: "project",
+      title: "Software Tools",
+      value: "softwareTools",
     },
     {
-      title: "Experiments",
-      value: "experiment",
+      title: "Installations",
+      value: "installations",
+    },
+    {
+      title: "Time-Based Media",
+      value: "timeBasedMedia",
+    },
+    {
+      title: "SageNet",
+      value: "sageNet",
+    },
+    {
+      title: "Other",
+      value: "other",
     },
   ];
 
@@ -27,8 +39,11 @@ export default function WorkPage() {
     <div className={styles.container}>
       <div className={styles.header}>
         <p className={styles.description}>
-          Below are selected works including software design, software, development, and various forms of artworks.
-          Experiments are web-based and run in real-time in the browser.
+        My work falls into multiple categories, including UX design, experience design, audiovisual experiments,
+        audiovisual installations, and interactive technology. While these can be very different mediums,
+        they all share elements of design, creativity and systems engineering and I have trouble organizing
+        them and reducing them to a single category. For that reason, I have included all works, from UI designs 
+        to audiovisual installations, sortable by tags. I hope you find them interesting!
         </p>
       </div>
       <div className={styles.content}>

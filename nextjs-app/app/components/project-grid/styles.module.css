@@ -19,10 +19,16 @@
 
 .gridItem {
   opacity: 0;
-  animation: fadeInUp 0.6s ease forwards;
+  animation: fadeInUp 0.5s ease forwards;
 }
 
-/* Stagger the animations */
+/* Add stagger delay to grid items */
+.gridItem:nth-child(1) { animation-delay: 0s; }
+.gridItem:nth-child(2) { animation-delay: 0.1s; }
+.gridItem:nth-child(3) { animation-delay: 0.2s; }
+.gridItem:nth-child(4) { animation-delay: 0.3s; }
+.gridItem:nth-child(5) { animation-delay: 0.4s; }
+.gridItem:nth-child(6) { animation-delay: 0.5s; }
 .gridItem:nth-child(1) { animation-delay: 0.1s; }
 .gridItem:nth-child(2) { animation-delay: 0.2s; }
 .gridItem:nth-child(3) { animation-delay: 0.3s; }
