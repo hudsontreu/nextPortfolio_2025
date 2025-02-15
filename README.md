@@ -6,8 +6,8 @@ A modern portfolio website built with Next.js and Sanity.
 
 This is a monorepo containing two main projects:
 
-- `web/`: Next.js frontend application
-- `studio/`: Sanity CMS backend
+- `nextjs-app/`: Next.js frontend application
+- `sanity-projects/`: Sanity CMS backend
 
 ## Getting Started
 
@@ -17,8 +17,8 @@ This is a monorepo containing two main projects:
 pnpm install
 
 # Install project dependencies
-cd web && pnpm install
-cd ../studio && pnpm install
+cd nextjs-app && pnpm install
+cd ../sanity-projects && pnpm install
 ```
 
 2. Set up environment variables:
@@ -31,10 +31,10 @@ NEXT_PUBLIC_SANITY_DATASET=production
 3. Run the development servers:
 ```bash
 # Run Next.js frontend
-cd web && pnpm dev
+cd nextjs-app && pnpm dev
 
 # Run Sanity Studio
-cd studio && pnpm dev
+cd sanity-projects && pnpm dev
 ```
 
 ## Development

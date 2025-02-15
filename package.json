@@ -3,7 +3,11 @@
   "private": true,
   "scripts": {
     "dev": "pnpm --parallel dev",
+    "dev:next": "cd nextjs-app && pnpm dev",
+    "dev:sanity": "cd sanity-projects && pnpm dev",
     "build": "pnpm --parallel build",
+    "build:next": "cd nextjs-app && pnpm build",
+    "build:sanity": "cd sanity-projects && pnpm build",
     "start": "pnpm --parallel start"
   },
   "packageManager": "pnpm@8.x",
