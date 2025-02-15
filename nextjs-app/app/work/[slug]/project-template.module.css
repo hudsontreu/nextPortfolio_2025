@@ -1,0 +1,399 @@
+.project {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 1rem 1rem 1rem;
+}
+
+.header {
+  text-align: center;
+}
+
+.projectData {
+  display: flex;
+  gap: 1.4rem;
+  align-items: flex-start;
+  min-width: 30%;
+  max-width: 33%;
+}
+
+.metadata {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+  padding-bottom: 1rem;
+}
+
+.metaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  text-align: left;
+}
+
+.metaLabel {
+  color: #666;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+}
+
+.metaValue {
+  font-size: 0.9rem;
+  font-family: var(--font-mono);
+  text-transform: capitalize;
+  font-weight: 400;
+  display: inline;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.metaValue > span {
+  display: inline;
+  line-height: 1.4rem;
+}
+
+.metaValue > .metaValue {
+  margin-right: 0.5rem;
+}
+
+.metaValue > .metaValue:last-child {
+  margin-right: 0;
+}
+
+.content {
+  flex: 1;
+  width: 100%;
+  margin: 2rem auto;
+  max-width: 1280px;
+}
+
+.nav {
+  margin-bottom: 3rem;
+}
+
+.backLink {
+  color: var(--muted-foreground);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.backLink:hover {
+  color: var(--muted-hover);
+}
+
+.heroImage {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  margin-bottom: 4rem;
+}
+
+.title {
+  margin-bottom: 2.2rem;
+}
+
+.title h1 {
+  font-size: 2.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.title h2 {
+  font-size: 1.6rem;
+  color: var(--muted-foreground);
+  font-weight: 600;
+}
+
+.block_1 {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.block_1 > .metadata {
+  flex: 0 0 33.333%;
+  min-width: 250px;
+}
+
+.block_1:has(.metadata + .metadata) .projectData {
+  min-width: 40%;
+  max-width: 45%;
+}
+
+/* .block_1:has(.metadata + .metadata) {
+  justify-content: space-between;
+}
+
+.block_1:has(.metadata + .metadata) > .metadata {
+  flex: 0 1 50%;
+}
+
+.block_1:has(.metadata + .metadata) > .description {
+  flex: 0 1 50%;
+}
+
+.block_1:not(:has(.metadata + .metadata)) > .metadata {
+  flex: 0 1 33.333%;
+}
+
+.block_1:not(:has(.metadata + .metadata)) > .description {
+  flex: 0 1 66.666%;
+} */
+
+.description {
+  font-size: 1.1rem;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.galleryImage {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.galleryImage img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.portableImage {
+  margin: 2.8rem 0;
+  width: 100%;
+}
+
+.portableImage .image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  margin: 2rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.video {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.videoCaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+}
+
+.imageCaption {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Image Gallery Styles */
+.galleryWrapper {
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.gallery2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.gallery3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.gallery4 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.galleryItem {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.galleryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.galleryCaption {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gallery3,
+  .gallery4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery2,
+  .gallery3,
+  .gallery4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Media Queries for Tablet and Mobile */
+@media screen and (max-width: 1024px) {
+  .metaItem {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.75rem;
+  }
+
+  .metaLabel {
+    min-width: 120px;
+  }
+
+  .block_1 {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Override all projectData widths at this breakpoint */
+  .projectData,
+  .block_1:has(.metadata + .metadata) .projectData {
+    flex-direction: column;
+    min-width: 100%;
+    max-width: 100%;
+    width: 100%;
+    gap: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title h1 {
+    font-size: 2.25rem;
+  }
+
+  .title h2 {
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+
+  .metaItem {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .metaLabel {
+    min-width: 100px;
+  }
+
+  .block_1 {
+    width: 100%;
+  }
+}
+
+/* Portable Text Styles */
+.portableText {
+  font-size: 1.1rem;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  margin: 1rem 0 1.6rem 0;
+}
+
+.portableH1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 2.5rem 0 2rem;
+}
+
+.portableH2 {
+  font-size: 2.1rem;
+  font-weight: 800;
+  margin: 5rem 0 -1.6rem 0;
+  color: var(--foreground);
+}
+
+.portableH3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 2rem 0 0 0;
+  padding: 0;
+  /* color: var(--accent); */
+}
+
+.portableH4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 3.2rem 0 0 0;
+}
+
+.portableQuote {
+  border-left: 4px solid #666;
+  font-style: italic;
+  margin: 2rem 0;
+  padding-left: 1.5rem;
+}
+
+.portableList {
+  list-style-type: disc;
+  margin: 1.5rem 0;
+  padding-left: 2rem;
+}
+
+.portableList li {
+  margin: 0.5rem 0;
+}
+
+.portableLink {
+  color: var(--secondary);
+  text-decoration: none;
+  position: relative;
+}
+
+.portableLink::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--secondary);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.portableLink:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}

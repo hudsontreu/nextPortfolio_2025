@@ -1,0 +1,177 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 2rem var(--page-padding);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0 2rem 0;
+  gap: 1rem;
+}
+
+.description {
+  max-width: 42rem;
+  color: var(--foreground);
+  font-size: 2rem;
+  line-height: 1.6;
+  font-weight: 700;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.bioColumn, .imageColumn, .skillsColumn {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.bioColumn {
+  animation-delay: 0.1s;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.imageColumn {
+  animation-delay: 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skillsColumn {
+  animation-delay: 0.5s;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.bio {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  line-height: 1.6;
+  color: var(--foreground);
+}
+
+.skills h2,
+.social h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.skillsTitle {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  color: var(--foreground);
+}
+
+.skillGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skillGroupTitle {
+  font-size: 0.9rem;
+  font-family: var(--font-mono);
+  color: var(--muted-foreground);
+  text-transform: uppercase;
+}
+
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill {
+  background: var(--muted);
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  font-size: 0.875rem;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.socialLink {
+  color: var(--muted-foreground);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  font-family: var(--font-mono);
+}
+
+.socialLink:hover {
+  color: var(--muted-hover);
+}
+
+.toolkit {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.toolkitTitle {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .imageContainer {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
