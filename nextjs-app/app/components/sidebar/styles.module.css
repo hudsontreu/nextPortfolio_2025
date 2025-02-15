@@ -106,6 +106,23 @@
   transform-origin: top;
 }
 
+.workContent::-webkit-scrollbar {
+  width: 6px;
+}
+
+.workContent::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.workContent::-webkit-scrollbar-thumb {
+  background: var(--muted-foreground);
+  border-radius: 3px;
+}
+
+.workContent::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
 @keyframes slideDown {
   from {
     opacity: 0;
@@ -163,36 +180,32 @@
   text-decoration: none;
   font-size: var(--font-size-xs);
   transition: color 0.2s ease;
-  position: relative;
-  display: inline-block;
+  display: inline;
+  line-height: 1.6;
 }
 
-.workLink::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 1px;
-  top: 50%;
-  left: 0;
-  background-color: var(--accent);
-  transition: width 0.3s ease;
-  transform: translateY(-50%);
+.workLink {
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 0.3s;
 }
 
 .workLink:hover {
   color: var(--foreground);
 }
 
-.workLink:hover::after {
-  width: 100%;
+.workLink:hover {
+  background-size: 100% 1px;
 }
 
 .activeWorkLink {
   color: var(--foreground);
 }
 
-.activeWorkLink::after {
-  width: 100%;
+.activeWorkLink {
+  background-size: 100% 1px;
 }
 
 /* Tablet and Mobile */
