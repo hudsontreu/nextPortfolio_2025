@@ -40,11 +40,7 @@ export default function WorkPage() {
       <div className={styles.header}>
         <p className={styles.title}>Work</p>
         <p className={styles.description}>
-        My work falls into multiple categories, including UX design, experience design, audiovisual experiments,
-        audiovisual installations, and interactive technology. While these can be very different mediums,
-        they all share elements of design, creativity and systems engineering and I have trouble organizing
-        them and reducing them to a single category. For that reason, I have included all works, from UI designs 
-        to audiovisual installations, sortable by tags. I hope you find them interesting!
+        My work spans experience design, interface design, UI engineering, and interactive digital arts. While these are unique fields, they each share elements of design thinking, systems thinking, and engineering in different ways. I am to use artistic exploration as a means of questioning innovative interaction paradigms in software design, and design as a ____(parag mital)____. Here, you'll find everything from UI designs to interactive installations and real-time web experiments, sortable by tags. I hope you find them interesting!
         </p>
       </div>
       <div className={styles.content}>
