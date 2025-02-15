@@ -1,0 +1,13 @@
+{
+  "name": "portfolio-2025",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --parallel dev",
+    "build": "pnpm --parallel build",
+    "start": "pnpm --parallel start"
+  },
+  "packageManager": "pnpm@8.x",
+  "engines": {
+    "node": ">=18"
+  }
+}
