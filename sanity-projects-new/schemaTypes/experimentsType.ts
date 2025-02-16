@@ -19,11 +19,27 @@ export default defineType({
       validation: (rule) => rule.required()
     }),
     defineField({
+      name: 'category',
+      title: 'Category',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Web Experiments', value: 'webExperiments'},
+          {title: 'Time-Based Media', value: 'timeBasedMedia'}
+        ]
+      },
+      validation: (rule) => rule.required()
+    }),
+    defineField({
       name: 'projectPath',
       title: 'Project Path',
       type: 'string',
-      description: 'Folder name in public directory (e.g., "generative-contemplations")',
-      validation: (rule) => rule.required()
+      description: 'Folder name in public directory (e.g., "generative-contemplations")'
+    }),
+    defineField({
+      name: 'video',
+      title: 'Video',
+      type: 'file'
     }),
     defineField({
       name: 'date',

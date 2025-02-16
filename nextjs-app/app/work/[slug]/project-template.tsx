@@ -33,7 +33,7 @@ interface ProjectTemplateProps {
     credits: string[];
     contributions: string[];
     projectPath?: string;
-    primaryDescription: string;
+    primaryDescription: any;
     details: PortableTextBlock[];
   };
 }
@@ -275,7 +275,10 @@ const ProjectTemplate = ({ project }: ProjectTemplateProps) => {
           </div>
 
           <div className={styles.description}>
-            <p>{project.primaryDescription}</p>
+            <PortableText
+              value={project.primaryDescription}
+              components={PortableTextComponents}
+            />
           </div>
         </div>
 

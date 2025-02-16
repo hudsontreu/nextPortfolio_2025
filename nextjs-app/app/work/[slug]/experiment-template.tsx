@@ -10,36 +10,54 @@ interface ExperimentTemplateProps {
     _id: string;
     _type: 'experiments';
     title: string;
+    category: string;
     description: string;
     projectPath: string;
     tags: string[];
     url: string;
     methods: string[];
     date: string;
+    video?: {
+      asset: {
+        _ref: string;
+      };
+    };
+    videoAsset?: {
+      url: string;
+      originalFilename: string;
+      mimeType: string;
+    };
   };
 }
 
 export default function ExperimentTemplate({ experiment }: ExperimentTemplateProps) {
   const iframeRef = useRef<HTMLIFrameElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const handleIframeError = useCallback((e: React.SyntheticEvent<HTMLIFrameElement, Event>) => {
     console.error('Iframe loading error:', e);
     console.log('Attempted path:', `/experiments/${experiment.projectPath}/index.html`);
   }, [experiment.projectPath]);
 
+  console.log('Rendering experiment:', {
+    category: experiment.category,
+    video: experiment.video,
+    videoUrl: experiment.videoUrl,
+    fullExperiment: experiment
+  });
+
   const handleFullscreen = useCallback(() => {
-    if (!iframeRef.current) return;
+    const element = experiment.category === 'webExperiments' ? iframeRef.current : videoRef.current;
+    if (!element) return;
 
     if (document.fullscreenElement) {
       document.exitFullscreen();
     } else {
-      iframeRef.current.requestFullscreen().catch((err) => {
+      element.requestFullscreen().catch((err) => {
         console.error('Error attempting to enable fullscreen:', err);
       });
     }
-  }, []);
-
-  if (!experiment.projectPath) return null;
+  }, [experiment.category]);
 
   return (
     <article className={styles.experiment}>
@@ -85,7 +103,7 @@ export default function ExperimentTemplate({ experiment }: ExperimentTemplatePro
           </div>
         )}
 
-        {experiment.projectPath && (
+        {experiment.category === 'webExperiments' ? (
           <div className={styles.iframeContainer}>
             <iframe
               ref={iframeRef}
@@ -97,7 +115,16 @@ export default function ExperimentTemplate({ experiment }: ExperimentTemplatePro
               allow="accelerometer; camera; gyroscope; microphone; xr-spatial-tracking"
             />
           </div>
-        )}
+        ) : experiment.category === 'timeBasedMedia' && experiment.videoAsset?.url ? (
+          <div className={styles.videoContainer}>
+            <video
+              ref={videoRef}
+              controls
+              className={styles.experimentVideo}
+              src={experiment.videoAsset.url}
+            />
+          </div>
+        ) : null}
       </div>
     </article>
   );

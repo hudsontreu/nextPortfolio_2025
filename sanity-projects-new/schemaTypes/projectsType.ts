@@ -88,8 +88,27 @@ export default defineType({
     defineField({
       name: 'primaryDescription',
       title: 'Primary Description',
-      type: 'text',
-      rows: 4
+      type: 'array',
+      of: [{
+        type: 'block',
+        styles: [{ title: 'Normal', value: 'normal' }],
+        lists: [],
+        marks: {
+          decorators: [],
+          annotations: [{
+            name: 'link',
+            type: 'object',
+            title: 'URL',
+            fields: [
+              {
+                name: 'href',
+                type: 'url',
+                title: 'URL'
+              }
+            ]
+          }]
+        }
+      }]
     }),
     defineField({
       name: 'details',

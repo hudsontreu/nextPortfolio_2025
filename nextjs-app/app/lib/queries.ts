@@ -14,41 +14,9 @@ export const LIST_QUERIES = {
     thumbnailType,
     tags,
     details,
-    category
-  }`,
-  
-  PROJECTS: `*[_type == "projects"] | order(date desc) {
-    _id,
-    _type,
-    title,
-    "slug": slug.current,
-    date,
-    headerImage,
-    "headerVideo": headerVideo.asset->{
-      _ref,
-      url
-    },
-    thumbnailType,
-    tags,
+    category,
     primaryDescription,
-    details,
-    category
-  }`,
-  
-  EXPERIMENTS: `*[_type == "experiments"] | order(date desc) {
-    _id,
-    _type,
-    title,
-    "slug": slug.current,
-    date,
-    headerImage,
-    "headerVideo": headerVideo.asset->{
-      _ref,
-      url
-    },
-    thumbnailType,
-    tags,
-    category
+    description
   }`,
 
   SIDEBAR_WORKS: `*[_type in ["projects", "experiments"]] | order(date desc) {
@@ -85,6 +53,8 @@ export const DETAIL_QUERIES = {
       _ref,
       url
     },
+    video,
+    "videoAsset": video.asset->{url, originalFilename, mimeType},
     thumbnailType,
     url,
     methods,
@@ -94,6 +64,7 @@ export const DETAIL_QUERIES = {
     projectPath,
     primaryDescription,
     details,
-    description
+    description,
+    category
   }`
 }
