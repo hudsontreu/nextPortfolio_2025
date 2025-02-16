@@ -13,8 +13,8 @@ export function ProjectCard({ work }: ProjectCardProps) {
   const imageUrl = work.headerImage ? urlForImage(work.headerImage).url() : '';
   const videoUrl = work.headerVideo?.url || '';
   const tags = Array.isArray(work.tags) ? work.tags : [work.tags];
-  const categoryDisplay = work._type === 'experiments' 
-    ? 'Web Experiments' 
+  const categoryDisplay = work._type === 'experiments'
+    ? (work.category === 'timeBasedMedia' ? 'Time-Based Media' : 'Web Experiments')
     : (REVERSE_CATEGORY_MAP[work.category || 'other'] || 'Other');
   
   return (

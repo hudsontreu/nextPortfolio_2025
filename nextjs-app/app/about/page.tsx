@@ -67,11 +67,11 @@ export default function About() {
         <div className={styles.grid}>
           <div className={styles.bioColumn}>
             <div className={styles.bio}>
-              <p>I'm Hudson, designer and creative developer currently working as a design technologist for the Digital Technology Innovation R&D team at SageNet and recently graduated from the MS-HCI program at Georgia Tech.</p>
+              <p>I'm Hudson, a designer and creative developer currently working as a design technologist for the Digital Technology Innovation R&D team at SageNet. Prior to joining SageNet, I graduated from Georgia Tech's MS-HCI program.</p>
               <br />
-              <p>As a design technologist, I both design and build interactive digital experiences at all scales, driven by a passion for enhancing human experiences through technology and 6 years professional experience. My work blends experience design, interface design, and UI engineering. I specialize in bringing designs to life through nuanced prototyping with emerging tech.</p>
+              <p>As a design technologist, I design and build interactive digital experiences at all scales, driven by a passion for enhancing human experiences through technology and six years of professional experience. My work spans experience design, interface design, UI engineering, and interactive digital arts. I specialize in creating designs based in research and bringing them to life through nuanced prototyping with emerging technologies.</p>
               <br />
-              <p>I also have a love for interactive digital arts. In my practice as a media artist, I aim to explore how digital art and contemporary media aesthetics can shape innovative interaction paradigms in software design.</p>
+              <p>While these are distinct fields, they share core elements of design thinking, systems thinking, and engineering—applied in varying degrees toward different goals. The design and development of software and interactive systems shapes the everyday human experience with technology, while artistic inquiry is used to continually re-define the questions asked in design. Through this process, I aim to explore how digital art and contemporary media aesthetics can shape innovative interaction paradigms in software design.</p>
             </div>
           </div>
 
