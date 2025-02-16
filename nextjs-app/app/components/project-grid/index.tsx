@@ -21,9 +21,13 @@ export function ProjectGrid({ filter }: ProjectGridProps) {
       setLoading(true);
       setError(null);
       try {
-        const query = filter === 'all' 
-          ? LIST_QUERIES.ALL
-          : `*[_type == "projects" && category == "${filter}"] | order(date desc) {
+        let query;
+        if (filter === 'all') {
+          query = LIST_QUERIES.ALL;
+        } else if (filter === 'webExperiments') {
+          query = LIST_QUERIES.EXPERIMENTS;
+        } else {
+          query = `*[_type == "projects" && category == "${filter}"] | order(date desc) {
               _id,
               _type,
               title,
@@ -39,6 +43,7 @@ export function ProjectGrid({ filter }: ProjectGridProps) {
               details,
               category
             }`
+        }
         const data = await client.fetch(query);
         console.log(`Fetched ${filter} data:`, data);
         setWorks(data);

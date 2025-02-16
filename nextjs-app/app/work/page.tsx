@@ -26,12 +26,12 @@ export default function WorkPage() {
       value: "timeBasedMedia",
     },
     {
-      title: "SageNet",
-      value: "sageNet",
+      title: "Web Experiments",
+      value: "webExperiments",
     },
     {
-      title: "Other",
-      value: "other",
+      title: "SageNet",
+      value: "sageNet",
     },
   ];
 
