@@ -1,6 +1,6 @@
 // List Queries - Used for displaying multiple items
 export const LIST_QUERIES = {
-  ALL: `*[_type in ["projects", "experiments"]] | order(date desc) {
+  ALL: `*[_type in ["projects", "experiments"]] | order(featured desc, date desc) {
     _id,
     _type,
     title,
@@ -15,6 +15,7 @@ export const LIST_QUERIES = {
     tags,
     details,
     category,
+    featured,
     primaryDescription,
     description
   }`,
@@ -34,7 +35,8 @@ export const LIST_QUERIES = {
     },
     thumbnailType,
     tags,
-    details
+    details,
+    featured
   }`
 }
 

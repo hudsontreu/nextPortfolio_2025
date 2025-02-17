@@ -37,11 +37,35 @@ export function ProjectGrid({ filter }: ProjectGridProps) {
               thumbnailType,
               tags,
               details,
-              category
+              category,
+              featured
             }`
         const data = await client.fetch(query);
-        console.log(`Fetched ${filter} data:`, data);
-        setWorks(data);
+        console.log(`Fetched ${filter} data before sorting:`, data.map((w: Work) => ({
+          title: w.title,
+          featured: w.featured,
+          date: w.date
+        })));
+
+        // Sort works by featured status and date
+        const sortedData = data.sort((a: Work, b: Work) => {
+          // Explicitly check for featured true
+          const aFeatured = a.featured === true;
+          const bFeatured = b.featured === true;
+
+          if (aFeatured && !bFeatured) return -1;
+          if (!aFeatured && bFeatured) return 1;
+
+          // If featured status is the same, sort by date
+          return new Date(b.date).getTime() - new Date(a.date).getTime();
+        });
+
+        console.log(`Fetched ${filter} data after sorting:`, sortedData.map((w: Work) => ({
+          title: w.title,
+          featured: w.featured,
+          date: w.date
+        })));
+        setWorks(sortedData);
       } catch (error) {
         console.error('Error fetching works:', error);
         setError('Failed to load projects');

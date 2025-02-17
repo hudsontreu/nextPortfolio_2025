@@ -150,5 +150,12 @@ export default defineType({
       title: 'Header Video',
       type: 'file'
     }),
+    defineField({
+      name: 'featured',
+      title: 'Featured',
+      type: 'boolean',
+      description: 'Featured items will appear at the top of lists',
+      initialValue: false
+    }),
   ]
 })

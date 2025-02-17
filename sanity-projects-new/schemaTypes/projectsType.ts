@@ -86,6 +86,13 @@ export default defineType({
       type: 'file'
     }),
     defineField({
+      name: 'featured',
+      title: 'Featured',
+      type: 'boolean',
+      description: 'Featured items will appear at the top of lists',
+      initialValue: false
+    }),
+    defineField({
       name: 'primaryDescription',
       title: 'Primary Description',
       type: 'array',

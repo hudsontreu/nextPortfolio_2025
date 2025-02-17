@@ -13,4 +13,6 @@ export interface Work {
   };
   thumbnailType: string;
   methods: string[];
+  featured?: boolean;
+  category?: string;
 }

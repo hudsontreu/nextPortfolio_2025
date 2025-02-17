@@ -13,6 +13,8 @@ type Work = {
   title: string;
   slug: string;
   category?: string | null;
+  featured?: boolean;
+  date: string;
 };
 
 type WorksByCategory = {
@@ -29,7 +31,7 @@ export function WorkContent() {
   useEffect(() => {
     const fetchWorks = async () => {
       const works = await client.fetch<Work[]>(LIST_QUERIES.SIDEBAR_WORKS);
-      console.log('Raw fetched works:', works.map(w => ({
+      console.log('Fetched works:', works.map(w => ({
         title: w.title,
         type: w._type,
         rawCategory: w.category,
