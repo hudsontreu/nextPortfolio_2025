@@ -72,7 +72,7 @@ export const DETAIL_QUERIES = {
     projectPath,
     primaryDescription,
     details,
-    description,
+    description[],
     category
   }`
 }

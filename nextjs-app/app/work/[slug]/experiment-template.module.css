@@ -146,5 +146,55 @@
   font-size: 1.1rem;
   font-family: 'Inter', sans-serif;
   line-height: 1.5;
-  margin: 2rem 0 0 0;
+  margin: 2rem 0 1.6rem 0;
+}
+
+/* Portable Text Styles */
+.portableH1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 2.5rem 0 1.5rem 0;
+}
+
+.portableH2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 2rem 0 1.25rem 0;
+}
+
+.portableH3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1.75rem 0 1rem 0;
+}
+
+.portableH4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.75rem 0;
+}
+
+.portableQuote {
+  border-left: 4px solid var(--muted-foreground);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--muted-foreground);
+}
+
+.portableList {
+  list-style-type: disc;
+  margin: 1rem 0 1.6rem 2rem;
+  line-height: 1.5;
+}
+
+.portableLink {
+  color: var(--link-color);
+  text-decoration: none;
+  border-bottom: 1px solid var(--link-color);
+  transition: opacity 0.2s ease;
+}
+
+.portableLink:hover {
+  opacity: 0.8;
 }

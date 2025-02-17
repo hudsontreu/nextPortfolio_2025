@@ -39,12 +39,10 @@ export function WorkContent() {
       const categorizedWorks = works.reduce((acc: WorksByCategory, work) => {
         let category: string;
         
-        if (work._type === 'experiments') {
-          category = 'webExperiments';
-        } else if (!work.category) {
-          category = 'other';
+        if (!work.category) {
+          category = work._type === 'experiments' ? 'webExperiments' : 'other';
         } else {
-          // The category from Sanity should already match our keys
+          // Use the category from Sanity
           category = work.category;
         }
           

@@ -122,8 +122,8 @@ export default defineType({
     defineField({
       name: 'description',
       title: 'Description',
-      type: 'text',
-      rows: 4
+      type: 'blockContent',
+      description: 'Add rich text content with paragraphs, links, and other formatting'
     }),
     defineField({
       name: 'thumbnailType',

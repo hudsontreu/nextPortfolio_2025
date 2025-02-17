@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useRef } from 'react';
 import styles from "./experiment-template.module.css";
+import { PortableText } from '@portabletext/react';
 
 interface ExperimentTemplateProps {
   experiment: {
@@ -11,7 +12,7 @@ interface ExperimentTemplateProps {
     _type: 'experiments';
     title: string;
     category: string;
-    description: string;
+    description: any;
     projectPath: string;
     tags: string[];
     url: string;
@@ -99,11 +100,33 @@ export default function ExperimentTemplate({ experiment }: ExperimentTemplatePro
         </header>
         
 
-        {experiment.description && (    
-        <div className={styles.description_block}>
-          <p className={styles.description}>
-            {experiment.description}
-          </p>
+        {experiment.description && (
+          <div className={styles.description_block}>
+            <PortableText
+              value={experiment.description}
+              components={{
+                block: {
+                  normal: ({children}) => <p className={styles.description}>{children}</p>,
+                  h1: ({children}) => <h1 className={styles.portableH1}>{children}</h1>,
+                  h2: ({children}) => <h2 className={styles.portableH2}>{children}</h2>,
+                  h3: ({children}) => <h3 className={styles.portableH3}>{children}</h3>,
+                  h4: ({children}) => <h4 className={styles.portableH4}>{children}</h4>,
+                  blockquote: ({children}) => <blockquote className={styles.portableQuote}>{children}</blockquote>,
+                },
+                list: {
+                  bullet: ({children}) => <ul className={styles.portableList}>{children}</ul>,
+                },
+                marks: {
+                  link: ({value, children}) => {
+                    return (
+                      <a href={value?.href} className={styles.portableLink} target="_blank" rel="noopener noreferrer">
+                        {children}
+                      </a>
+                    );
+                  }
+                }
+              }}
+            />
           </div>
         )}
 
