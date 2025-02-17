@@ -26,6 +26,9 @@ export function ProjectCard({ work }: ProjectCardProps) {
         <div className={styles.corner} />
       </div>
       
+      {work.featured && (
+        <div className={styles.featuredFlag}>*Featured*</div>
+      )}
       <div className={styles.content}>
         <div className={styles.topSection}>
           <div className={styles.metadata}>
