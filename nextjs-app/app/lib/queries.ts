@@ -53,15 +53,15 @@ export const DETAIL_QUERIES = {
       _ref,
       url
     },
-    "video": {
-      "url": video.url,
-      "file": video.file,
-      "fileUrl": video.file.asset->url,
-      "caption": video.caption,
-      "loop": video.loop,
-      "autoplay": video.autoplay,
-      "hideControls": video.hideControls,
-      "muted": video.muted
+    "videos": videos[]{
+      "url": url,
+      "file": file,
+      "fileUrl": file.asset->url,
+      "caption": caption,
+      "loop": loop,
+      "autoplay": autoplay,
+      "hideControls": hideControls,
+      "muted": muted
     },
     thumbnailType,
     url,

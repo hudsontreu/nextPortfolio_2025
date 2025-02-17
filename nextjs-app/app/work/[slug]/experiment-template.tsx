@@ -17,7 +17,7 @@ interface ExperimentTemplateProps {
     url: string;
     methods: string[];
     date: string;
-    video?: {
+    videos?: Array<{
       url?: string;
       file?: {
         asset: {
@@ -30,7 +30,7 @@ interface ExperimentTemplateProps {
       autoplay?: boolean;
       hideControls?: boolean;
       muted?: boolean;
-    };
+    }>;
   };
 }
 
@@ -119,21 +119,25 @@ export default function ExperimentTemplate({ experiment }: ExperimentTemplatePro
               allow="accelerometer; camera; gyroscope; microphone; xr-spatial-tracking"
             />
           </div>
-        ) : experiment.category === 'timeBasedMedia' && (experiment.video?.url || experiment.video?.fileUrl) ? (
-          <div className={styles.videoWrapper}>
-            <video
-              ref={videoRef}
-              controls={!experiment.video?.hideControls}
-              className={styles.video}
-              src={experiment.video?.url || experiment.video?.fileUrl}
-              loop={experiment.video?.loop}
-              autoPlay={experiment.video?.autoplay}
-              muted={experiment.video?.muted}
-              playsInline
-            />
-            {experiment.video?.caption && (
-              <p className={styles.videoCaption}>{experiment.video.caption}</p>
-            )}
+        ) : experiment.category === 'timeBasedMedia' && experiment.videos?.length ? (
+          <div className={styles.videosContainer}>
+            {experiment.videos.map((video, index) => (
+              <div key={index} className={styles.videoWrapper}>
+                <video
+                  ref={index === 0 ? videoRef : undefined}
+                  controls={!video.hideControls}
+                  className={styles.video}
+                  src={video.url || video.fileUrl}
+                  loop={video.loop}
+                  autoPlay={video.autoplay}
+                  muted={video.muted}
+                  playsInline
+                />
+                {video.caption && (
+                  <p className={styles.videoCaption}>{video.caption}</p>
+                )}
+              </div>
+            ))}
           </div>
         ) : null}
       </div>

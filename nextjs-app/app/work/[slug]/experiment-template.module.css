@@ -99,10 +99,17 @@
   overflow: hidden;
 }
 
+.videosContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  width: 100%;
+  margin: 2rem 0;
+}
+
 .videoWrapper {
   position: relative;
   width: 100%;
-  margin: 2rem 0;
   border-radius: 8px;
   overflow: hidden;
 }

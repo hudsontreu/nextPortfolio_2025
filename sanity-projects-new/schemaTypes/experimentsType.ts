@@ -37,61 +37,66 @@ export default defineType({
       description: 'Folder name in public directory (e.g., "generative-contemplations")'
     }),
     defineField({
-      name: 'video',
-      title: 'Video',
-      type: 'object',
-      description: 'Add video content via URL or file upload. For best compatibility: 1) Use YouTube/Vimeo links when possible, or 2) Upload MP4 files. While MOV files are supported, they may not play in all browsers.',
-      fields: [
-        {
-          title: 'Video URL',
-          name: 'url',
-          type: 'url',
-          description: 'Paste a YouTube or Vimeo URL. This is the recommended method for better performance and compatibility.'
-        },
-        {
-          title: 'Video File',
-          name: 'file',
-          type: 'file',
-          description: 'Upload a video file. Recommended format: MP4 (H.264). MOV files are supported but may have limited browser compatibility.',
-          options: {
-            accept: 'video/*'
+      name: 'videos',
+      title: 'Videos',
+      type: 'array',
+      description: 'Add one or more videos to display in a vertical stack',
+      of: [{
+        type: 'object',
+        title: 'Video',
+        description: 'Add video content via URL or file upload. For best compatibility: 1) Use YouTube/Vimeo links when possible, or 2) Upload MP4 files. While MOV files are supported, they may not play in all browsers.',
+        fields: [
+          {
+            title: 'Video URL',
+            name: 'url',
+            type: 'url',
+            description: 'Paste a YouTube or Vimeo URL. This is the recommended method for better performance and compatibility.'
+          },
+          {
+            title: 'Video File',
+            name: 'file',
+            type: 'file',
+            description: 'Upload a video file. Recommended format: MP4 (H.264). MOV files are supported but may have limited browser compatibility.',
+            options: {
+              accept: 'video/*'
+            }
+          },
+          {
+            title: 'Caption',
+            name: 'caption',
+            type: 'string',
+            description: 'Add a caption to describe the video (optional)'
+          },
+          {
+            title: 'Auto Loop',
+            name: 'loop',
+            type: 'boolean',
+            description: 'Video will play continuously on loop',
+            initialValue: false
+          },
+          {
+            title: 'Autoplay',
+            name: 'autoplay',
+            type: 'boolean',
+            description: 'Video will play automatically when loaded (must be muted)',
+            initialValue: false
+          },
+          {
+            title: 'Hide Controls',
+            name: 'hideControls',
+            type: 'boolean',
+            description: 'Hide video playback controls',
+            initialValue: false
+          },
+          {
+            title: 'Muted',
+            name: 'muted',
+            type: 'boolean',
+            description: 'Mute video (required for autoplay)',
+            initialValue: true
           }
-        },
-        {
-          title: 'Caption',
-          name: 'caption',
-          type: 'string',
-          description: 'Add a caption to describe the video (optional)'
-        },
-        {
-          title: 'Auto Loop',
-          name: 'loop',
-          type: 'boolean',
-          description: 'Video will play continuously on loop',
-          initialValue: false
-        },
-        {
-          title: 'Autoplay',
-          name: 'autoplay',
-          type: 'boolean',
-          description: 'Video will play automatically when loaded (must be muted)',
-          initialValue: false
-        },
-        {
-          title: 'Hide Controls',
-          name: 'hideControls',
-          type: 'boolean',
-          description: 'Hide video playback controls',
-          initialValue: false
-        },
-        {
-          title: 'Muted',
-          name: 'muted',
-          type: 'boolean',
-          description: 'Mute video (required for autoplay)',
-          initialValue: true
-        }
-      ]
+        ]
+      }]
     }),
     defineField({
       name: 'date',
