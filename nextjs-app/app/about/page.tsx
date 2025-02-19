@@ -71,6 +71,7 @@ export default function About() {
               <br />
               <p>As a design technologist, I design and build interactive digital experiences at all scales, driven by a passion for enhancing human experiences through technology and six years of professional experience. My work spans experience design, interface design, UI engineering, and interactive digital arts. I specialize in creating designs based in research and bringing them to life through nuanced prototyping with emerging technologies.</p>
               <br />
+              <p>TESTESTESTWST</p>
               <p>While these are distinct fields, they share core elements of design thinking, systems thinking, and engineering—applied in varying degrees toward different goals. The design and development of software and interactive systems shapes the everyday human experience with technology, while artistic inquiry is used to continually re-define the questions asked in design. Through this process, I aim to explore how digital art and contemporary media aesthetics can shape innovative interaction paradigms in software design.</p>
             </div>
           </div>
